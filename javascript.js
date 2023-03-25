@@ -14,8 +14,16 @@ hamburger.addEventListener("click", () => {
 /* Features */
 
 const indicators = document.querySelectorAll('.indicator');
-const features = document.querySelectorAll('.feature');
 const extension = document.querySelector('.extension');
+const feature = document.querySelector('.feature');
+const featureImg = document.querySelector('#feature-img');
+const featureTitle = document.querySelector('.info-box .title');
+const featureDescription = document.querySelector('.info-box .description');
+const featureImageLink = [`images/illustration-features-tab-1.svg`, `images/illustration-features-tab-2.svg`, `images/illustration-features-tab-3.svg`];
+const featureTitleText = [`Bookmark in one click`, `Intelligent search`, `Share your bookmarks`];
+const featureDescriptionText = [`Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manage your favorite sites.`,
+                            `ur powerful search feature will help you find saved sites in no time at all. No need to trawl through all of your bookmarks.`,
+                            `Easily share your bookmarks and collections with others. Create a sharable link that you can send at the click of the button.`];
 
 indicators.forEach(indicator => {
   let indexOfIndicator = [...indicators].indexOf(indicator);
@@ -24,27 +32,14 @@ indicators.forEach(indicator => {
     for(var i = 0; i < indicators.length; i++){
 
       indicators[i].classList.remove('active');
-      features[i].classList.remove('active');
     }   
     
     indicator.classList.add('active');
-    features[indexOfIndicator].classList.add('active');
-    extension.style.marginTop = `${features[indexOfIndicator].clientHeight + 125}px`;
+    featureImg.src = featureImageLink[indexOfIndicator];
+    featureTitle.innerHTML = featureTitleText[indexOfIndicator];
+    featureDescription.innerHTML = featureDescriptionText[indexOfIndicator];
   });
 }); 
-
-
-/* Extensions  */
-
-
-const featureActive = document.querySelector('.feature.active');
-extension.style.marginTop = `${featureActive.clientHeight + 125}px`;
-
-window.addEventListener('resize', () => {
-  extension.style.marginTop = `${featureActive.clientHeight + 125}px`;
-});
-
-
 
 /* Questions */
 
@@ -77,7 +72,7 @@ question.forEach(faq => {
 
 
 
-/* footer */
+/* Contact */
 
 const inputEmail = document.querySelector('.input-email');
 const contactInput = document.querySelector('.email-input');
