@@ -83,7 +83,6 @@ function validation() {
   if(contactInput.value.match(pattern)) {
     inputEmail.classList.remove('message');
     contactInput.classList.remove('message');
-
   } else {
     inputEmail.classList.add('message');
     contactInput.classList.add('message');
@@ -105,9 +104,6 @@ function validationSent() {
       success.style.animation = `success-animation 0.6s ease-in-out backwards`;
     }, 3000);
 
-  } else {
-    inputEmail.classList.add('message');
-    contactInput.classList.add('message');
   }
 };
 
