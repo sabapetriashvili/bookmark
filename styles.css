@@ -127,7 +127,7 @@ header {
 
 .hamburger {
     display: none;
-    z-index: 15;
+    z-index: 4;
 }
 
 
@@ -181,7 +181,7 @@ header {
         position: fixed;
         top: 50px;
         filter: contrast(10) invert(2);
-        z-index: 15;
+        z-index: 4;
       }
 
       .menu{
@@ -194,7 +194,7 @@ header {
         align-items: center;
         background-color: rgba(37, 43, 70, 0.90);
         overflow-y: scroll;
-        z-index: 10;
+        z-index: 3;
         transition: all ease-in 0.3s;
       }
 
